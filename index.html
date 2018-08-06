@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Eindopdracht NMD-I</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+<div class="wrapper">
+    <nav id="nav">
+        <h3>Discover</h3>
+        <a href="pages/intro.html" target="content" class="link active">Introductie</a>
+        <h3>Define</h3>
+        <a href="pages/concurrentie.html" target="content" class="link">Concurrentie analyse</a>
+        <a href="pages/scenarios.html" target="content" class="link">Scenario's</a>
+        <a href="pages/ideaboard.pdf" target="content" class="link">Ideaboard</a>
+        <h3>Design</h3>
+        <a href="pages/sitemap.pdf" target="content" class="link">Sitemap</a>
+        <a href="pages/wireframes.pdf" target="content" class="link">Wireframes</a>
+        <a href="pages/style-tile.pdf" target="content" class="link">Style Tile</a>
+        <a href="pages/visual-designs.pdf" target="content" class="link">Visual Designs</a>
+        <h3>Develop</h3>
+        <a href="pages/styleguide.html" target="content" class="link">Digital Styleguide</a>
+    </nav>
+
+    <section>
+        <iframe name="content" width="100%" height="100%" src="pages/intro.html" frameborder="0" border="0"></iframe>
+    </section>
+
+    <button id="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</div>
+<script>
+    var $nav = document.getElementById("nav");
+    var $button = document.getElementById("menu");
+    $button.addEventListener('click', function () {
+        
+        if ($nav.classList.contains('open')) {
+            $nav.classList.remove('open');
+            this.classList.remove('open');
+        } else {
+            $nav.classList.add('open');
+            this.classList.add('open');
+        }
+    });
+
+    var $links = document.querySelectorAll('a');
+    var $current = document.querySelector('a.active');
+    $links.forEach(function(link) {
+        link.addEventListener('click', function () {
+            $current.classList.remove('active'); 
+            this.classList.add('active');
+            $current = this;
+        });
+    });
+
+</script>
+</body>
+</html>
